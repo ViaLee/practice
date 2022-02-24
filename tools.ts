@@ -94,7 +94,7 @@ export function deepForEach(config) {
     }
   });
 }
-
+// 根据key扁平对象数组
 export function flatObjArr(list: any[], key: string = 'children') {
   if (!list || !Array.isArray(list)) {
     return list || [];
