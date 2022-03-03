@@ -124,3 +124,10 @@ export function getSimpleText(html){
   var msg = html.replace(re1,'');//执行替换成空字符
   return msg;
   }
+
+  export  function getBlobURL(module) {
+    const jsCode = module.innerHTML;
+    const blob = new Blob([jsCode], {type: 'text/javascript'});
+    const blobURL = URL.createObjectURL(blob);
+    return blobURL;
+  }
