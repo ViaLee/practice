@@ -116,3 +116,11 @@ export const debounce = (func, delay = 1000) => {
     }, delay);
   };
 };
+
+
+//html剔除富文本标签，留下纯文本
+export function getSimpleText(html){
+  var re1 = new RegExp("<.+?>","g");//匹配html标签的正则表达式，"g"是搜索匹配多个符合的内容
+  var msg = html.replace(re1,'');//执行替换成空字符
+  return msg;
+  }
