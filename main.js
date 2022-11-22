@@ -68,3 +68,60 @@ function unique(arr){
 }
 // es6
 const unique = arr=>[...new Set(arr)]
+
+function render(){
+  const list = [{id:'name',colNum:1},
+  {id:'gender',colNum:4},
+  {id:'gender',colNum:3},
+  {id:'gender',colNum:3},
+  {id:'gender',colNum:2}]
+  let row = []
+  const parentElement = $('div')
+  const sum = 0
+  for(let i=0;i<list.length;i++){
+    sum += i.colNum
+    if(sum>4){
+      // 加上当前这项超过4就只渲染这项之前的
+      parentElement.append(`
+      // row 里存的项,结合
+      `)
+      // 添加之后清空row
+      row = []
+    }else if(sum===4){
+      // 加上当前这项 刚好等于4
+      row.push(i)
+      parentElement.append(`
+      // row 里存的项
+      `)
+    }else{
+      row.push(i)
+    }
+  }
+}
+
+
+
+function render(){
+  const list = [{id:'name',colNum:1},
+  {id:'gender',colNum:4},
+  {id:'gender',colNum:3},
+  {id:'gender',colNum:3},
+  {id:'gender',colNum:2}]
+  return <Form>
+    <Row gutter={12} wrap>
+    {list.map(i=><Col span={6*i.colNum} >
+      <Form.Item
+        label="Username"
+        name="username"
+        rules={[{ required: true, message: 'Please input your username!' }]}
+      >
+        <Input />
+      </Form.Item>
+      </Col>
+    )
+    }
+    </Row>
+  </Form>
+}
+
+
