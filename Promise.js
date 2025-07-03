@@ -12,7 +12,6 @@
 
 */
 
-
 const PENDING = "PENDING";
 const FULFILLED = "FULFILLED";
 const REJECTED = "REJECTED";
@@ -44,7 +43,6 @@ class Promise1 {
     let _this = this;
 
     return new Promise1((res, rej) => {
-
       if (this.status === PENDING) {
         _this.thenList.push(() => {
           setTimeout(() => {
@@ -54,7 +52,6 @@ class Promise1 {
           }, 0);
         });
       }
-
     });
   }
 }
