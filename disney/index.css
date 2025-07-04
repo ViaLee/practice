@@ -1,0 +1,15 @@
+.parent {
+  background-color: rgb(27, 57, 162);
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  border: 1px solid black;
+}
+
+.castle {
+  border: 1px solid red;
+}
+
+.img {
+  border: 1px solid blue;
+}
